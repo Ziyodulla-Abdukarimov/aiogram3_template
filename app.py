@@ -37,9 +37,12 @@ async def setup_aiogram(dispatcher: Dispatcher, bot: Bot) -> None:
 
 
 async def aiogram_on_startup_polling(dispatcher: Dispatcher, bot: Bot) -> None:
+
+
     logger.info("Starting polling")
     await bot.delete_webhook(drop_pending_updates=True)
     await setup_aiogram(bot=bot, dispatcher=dispatcher)
+
 
 
 async def aiogram_on_shutdown_polling(dispatcher: Dispatcher, bot: Bot):
